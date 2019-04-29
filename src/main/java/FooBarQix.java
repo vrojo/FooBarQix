@@ -15,7 +15,6 @@ public class FooBarQix {
             number.append("Qix");
         }
 
-        System.out.println("number: " + number);
         String givenNumberString = Integer.toString(givenNbr);
         for (String letter : givenNumberString.split("")) {
             if (letter.equals("0")) {
