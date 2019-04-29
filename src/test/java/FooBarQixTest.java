@@ -99,9 +99,22 @@ public class FooBarQixTest {
     }
 
     @Test
+    @Parameters({
+            "0, *",
+            "10, Bar*",
+            "90, FooBar*",
+            "100, Bar**"
+    })
+    public void should_return_the_correct_string_replacing_zero_by_an_asterix(int originalNumber, String expectedString) {
+        String modifiedString = FooBarQix.compute(originalNumber);
+
+        Assertions.assertThat(modifiedString).isEqualTo(expectedString);
+    }
+
+    @Test
     public void should_return_the_correct_string_when_given_a_number() {
-        int originalNumber = 35;
-        String expectedString = "BarQixFooBar";
+        int originalNumber = 350;
+        String expectedString = "BarQixFooBar*";
 
         String modifiedString = FooBarQix.compute(originalNumber);
 
