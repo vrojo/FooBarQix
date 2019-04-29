@@ -36,9 +36,9 @@ public class FooBarQixTest {
     @Test
     @Parameters({
             "5, BarBar",
-            "10, Bar",
+            "10, Bar*",
             "15, FooBarBar",
-            "100, Bar"
+            "100, Bar**"
     })
     public void should_return_Foo_when_the_number_is_a_multiple_of_5(int originalNumber, String expectedString) {
         String modifiedString = FooBarQix.compute(originalNumber);
